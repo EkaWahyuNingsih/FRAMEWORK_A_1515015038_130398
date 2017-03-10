@@ -12,9 +12,17 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('halamanku');
 });
 Route::get('public', function () {
-    return view('Biodata');
+    return view('halamanku');
 });
 
+Route::get('pengguna/{pengguna}',function ($pengguna)
+{
+	return " Hallo World dari pengguna $pengguna";
+});
+
+Route::auth();
+
+Route::get('/home', 'HomeController@index');
